@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "angular-fundamentals"
+    }
+  },
+  "defaultProject": "angular-fundamentals",
+  "cli": {
+    "analytics": false
+  }
 }
