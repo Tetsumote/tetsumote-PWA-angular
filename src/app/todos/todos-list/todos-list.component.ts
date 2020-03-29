@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/services/data.service';
+import { Todo } from '../todo'
 
 @Component({
   selector: 'app-todos-list',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodosListComponent implements OnInit {
 
-  constructor() { }
+  todos:Todo[]
 
+  constructor(private dataService:DataService) { 
+  } 
+  
   ngOnInit(): void {
+    this.dataService.getData().subscribe(data => {
+      this.todos = data;
+    })
+  }
+
+  onSelectedTodo(event){
+    console.log(event)
   }
 
 }
